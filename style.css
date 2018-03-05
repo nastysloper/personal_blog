@@ -1,0 +1,11 @@
+body {
+	font-family: 'Gentium Basic', serif;
+}
+
+.code {
+    font-family: 'Source Code Pro', monospace;
+}
+
+a {
+	text-decoration: none;
+}

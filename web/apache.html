@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Apache</title>
+<link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+</head>
+<body>
+<h1>Apache Web Server</h1>
+
+<p>Apache web server comes bundled with Mac OS. First step is to add yourself
+to the configuration file.</p>
+<p>edit <span class="code">/etc/apache2/users/USERNAME.conf</span> and add the following lines:</p>
+<p><span class="code"
+	&ltDirectory "/Users/USERNAME/Sites/"&gt</br>
+	Options Indexes Multiviews</br>
+	AllowOverride AuthConfig Limit</br>
+	Order allow,deny</br>
+	Allow from all</br>
+	&lt/Directory&gt</br>
+</span></p>
+<p>also make this change in http.conf:<br>
+# User home directories<br>
+510 Include /private/etc/apache2/extra/httpd-userdir.conf<br><br>
+
+note: don't edit the index.html file in /Library/Webserver/Documents
+your files will go in your home directory under Sites/<br>
+To make that happen, you edit the /etc/apache2/users configuration file<br>
+and the httpd-userdir.conf file.<br>
+<p>start the server with this command:</p>
+<p><span class="code">sudo apachectl start</span></p>
+<p>or<br><span class="code">sudo apachectl restart</span></p>
+</body>
+</html>
